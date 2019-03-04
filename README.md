@@ -1,10 +1,13 @@
-# Modez 
+# Modez
+
+## Indispensable library inspired by Lodash
+
+
 
 ```javascript
 const modez = require("modez")
 ```
 
-# Indispensable library inspired by Lodash
 
 ## ifFalse
 
@@ -17,18 +20,18 @@ modez.ifFalse(condition, () => {
 })
 ```
 
-## mapBreak
+## forEachBreak
 
-Map function is great compared by a "for in/of loop" for no actual reason but with those advanced solution you can use break and continue operators.
+forEach function is great compared by a "for in/of loop" for no actual reason but with those advanced solution you can use break and continue operators.
 
 ```javascript
-modez.mapBreak(array, (item) => item + 1, (item) => /*true here == break*/ )
+modez.forEachBreak(array, (item) => console.log(item), (item) => /*true here == break*/ )
 ```
 
-## mapContinue
+## forEachContinue
 
 ```javascript
-modez.mapContinue(array, (item) => item + 1, (item) => /*true here == continue*/ )
+modez.forEachContinue(array, (item) => console.log(item), (item) => /*true here == continue*/ )
 ```
 
 ## addthirtyNine
