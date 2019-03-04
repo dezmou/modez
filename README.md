@@ -51,3 +51,13 @@ modez.executeFunction(() => {
     console.log("executed !")
 })
 ```
+
+## assert
+
+Basic testing function, always returns true : for testing coverage lovers
+
+```javascript
+modez.assert(() => {
+    console.log("some test code !")
+}) // true
+```
