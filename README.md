@@ -39,12 +39,12 @@ modez.forEachContinue(array, (item) => console.log(item), (item) => /*true here 
 More simply way to add 39 to a number.
 
 ```javascript
-const result = modez.AddthirtyNine(20) // result == 59
+const result = modez.addthirtyNine(20) // result == 59
 ```
 
 ## executeFunction
 
-Execute a given function 
+Simpler solution to execute a given function 
 
 ```javascript
 modez.executeFunction(() => {

@@ -1,0 +1,22 @@
+{
+  "name": "modez",
+  "version": "1.0.0",
+  "description": "indispensable library inspired by lodash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dezmou/modez.git"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "modez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dezmou/modez/issues"
+  },
+  "homepage": "https://github.com/dezmou/modez#readme"
+}
