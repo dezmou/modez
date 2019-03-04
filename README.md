@@ -51,3 +51,11 @@ modez.executeFunction(() => {
     console.log("executed !")
 })
 ```
+
+## tryCatch
+
+Since forEach replace a native for loop and is so popular, why not replace the try catch operator for a simpler solution ? 
+
+```javascript
+modez.tryCatch(() => {/* try */}, (error) => {/* error */})
+```
