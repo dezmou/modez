@@ -27,6 +27,10 @@ const executeFunction = (func) => {
   func()
 }
 
+const executeFunctionAsync = (func) => {
+  setTimeout(func, 0)
+}
+
 const tryCatch = (tryFunc, catchFunc) => {
   try {
     tryFunc()
@@ -35,4 +39,4 @@ const tryCatch = (tryFunc, catchFunc) => {
   }
 }
 
-export default { ifFalse, forEachBreak, forEachContinue, addthirtyNine, executeFunction, tryCatch }
+export default { ifFalse, forEachBreak, forEachContinue, addthirtyNine, executeFunction, executeFunctionAsync, tryCatch }

@@ -52,6 +52,18 @@ modez.executeFunction(() => {
 })
 ```
 
+## executeFunctionAsync
+
+Simpler solution to execute a given function asynchronously
+
+```javascript
+modez.executeFunctionAsync(() => {
+    console.log("executed second !")
+})
+console.log("executed first !")
+```
+
+
 ## tryCatch
 
 Since forEach replace a native for loop and is so popular, why not replace the try catch operator for a simpler solution ? 
