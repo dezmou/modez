@@ -1,3 +1,7 @@
+const createFunction = (func) => {
+  return func
+}
+
 const ifFalse = (condition, func) => {
   if (!condition) func()
 }

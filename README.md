@@ -2,12 +2,18 @@
 
 ## Indispensable library inspired by Lodash
 
-
-
 ```javascript
 const modez = require("modez")
 ```
 
+## createFunction
+
+Simpler way to create a function
+
+```javascript
+const myFunction = modez.createFunction((params) => {console.log(params)})
+myFunction("hello")
+```
 
 ## ifFalse
 
@@ -63,7 +69,6 @@ modez.executeFunctionAsync(() => {
 console.log("executed first !")
 ```
 
-
 ## tryCatch
 
 Since forEach replace a native for loop and is so popular, why not replace the try catch operator for a simpler solution ? 
@@ -71,3 +76,4 @@ Since forEach replace a native for loop and is so popular, why not replace the t
 ```javascript
 modez.tryCatch(() => {/* try */}, (error) => {/* error */})
 ```
+
