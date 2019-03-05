@@ -6,33 +6,22 @@ const ifFalse = (condition, func) => {
   if (!condition) func()
 }
 
-const forEachBreak = (array, func, funcBreak) => {
-  for (let item in array) {
-    if (funcBreak(array[item])) {
-      return
-    }
-    func(item)
+const forEachBreak = (array, func) => {
+  for (let item of array){
+    if (func(item)) return
   }
 }
 
-const forEachContinue = (array, func, funcContinue) => {
-  for (let item in array) {
-    if (ifFalse(funcContinue(array[item]))) {
-      func(item)
-    }
-  }
+const addthirtyNine = (number, func) => {
+  func(number + 39)
 }
 
-const addthirtyNine = (number) => {
-  return number + 39
+const executeFunction = (func, params) => {
+  func(params)
 }
 
-const executeFunction = (func) => {
-  func()
-}
-
-const executeFunctionAsync = (func) => {
-  setTimeout(func, 0)
+const executeFunctionAsync = (func, params) => {
+  setTimeout(func, params)
 }
 
 const tryCatch = (tryFunc, catchFunc) => {

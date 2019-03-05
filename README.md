@@ -1,9 +1,22 @@
 # Modez
 
-## Indispensable library inspired by Lodash
+## Indispensable library inspired by Lodash, give your the possibility to write code simpler and more functional.
 
 ```javascript
 const modez = require("modez")
+```
+
+
+## forEachBreak
+
+forEach function but if callback return true then break
+
+```javascript
+modez.forEachBreak(array, item => {
+    if (item === "chien"){
+        return true //end of forEach
+    }
+})
 ```
 
 ## createFunction
@@ -15,9 +28,20 @@ const myFunction = modez.createFunction((params) => {console.log(params)})
 myFunction("hello")
 ```
 
+## addthirtyNine
+
+Simpler way to add 39 to a number.
+
+```javascript
+let nbr = 20
+modez.addthirtyNine(nbr, (result) => {
+    console.log(result) // result == 59
+}) 
+```
+
 ## ifFalse
 
-"if condition" except execute callback only if condition if false 
+Check if the condition is false so execute the callback
 
 ```javascript
 const condition = false 
@@ -25,27 +49,15 @@ modez.ifFalse(condition, () => {
     console.log("condition is false")
 })
 ```
+## forOne
 
-## forEachBreak
-
-forEach function is great compared by a "for in/of loop" for no actual reason but with those advanced solution you can use break and continue operators.
-
-```javascript
-modez.forEachBreak(array, (item) => console.log(item), (item) => /*true here == break*/ )
-```
-
-## forEachContinue
+Iterate through a given array like forEach, but only first element.
 
 ```javascript
-modez.forEachContinue(array, (item) => console.log(item), (item) => /*true here == continue*/ )
-```
-
-## addthirtyNine
-
-More simply way to add 39 to a number.
-
-```javascript
-const result = modez.addthirtyNine(20) // result == 59
+myArray = [1,2,3]
+modez.forOne(myArray, (item) => {
+    console.log(item) // only 1 will be printed
+})
 ```
 
 ## executeFunction
@@ -53,9 +65,10 @@ const result = modez.addthirtyNine(20) // result == 59
 Simpler solution to execute a given function 
 
 ```javascript
-modez.executeFunction(() => {
-    console.log("executed !")
-})
+const myFunction = (foo) => {
+    console.log(`Welcome ${foo} !`) //welcome chien !
+}
+modez.executeFunction(myFunction, "chien")
 ```
 
 ## executeFunctionAsync
@@ -63,17 +76,18 @@ modez.executeFunction(() => {
 Simpler solution to execute a given function asynchronously
 
 ```javascript
-modez.executeFunctionAsync(() => {
-    console.log("executed second !")
-})
-console.log("executed first !")
+const myFunction = (foo) => {
+    console.log(`Welcome ${foo} !`) //welcome chien !
+}
+modez.executeFunction(myFunction, "foo")
+console.log("I am first") // first log to be printed
 ```
 
-## tryCatch
+## safeExecute
 
-Since forEach replace a native for loop and is so popular, why not replace the try catch operator for a simpler solution ? 
+Execute the first function given, if it fail, catch the error in the seconde function
 
 ```javascript
-modez.tryCatch(() => {/* try */}, (error) => {/* error */})
+modez.safeExecute(() => {/* try */}, (error) => {/* error */})
 ```
 
