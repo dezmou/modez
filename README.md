@@ -38,13 +38,13 @@ const myFunction = modez.createFunction((params) => {console.log(params)})
 myFunction("hello")
 ```
 
-## addthirtyNine
+## addThirtyNine
 
 Simpler and more functional way to add 39 to a number.
 
 ```javascript
 let nbr = 20
-modez.addthirtyNine(nbr, (result) => {
+modez.addThirtyNine(nbr, (result) => {
     console.log(result) // result == 59
 }) 
 ```

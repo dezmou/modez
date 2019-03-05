@@ -3,21 +3,22 @@ const assigneValue = (v) => v
 const createFunction = (f) =>  assigneValue(f)
 
 const ifFalse = createFunction((condition, func) => {
-  if (!condition) func()
+  assigneValue(condition ? null : executeFunction(func))
 })
 
 const forEachBreak = createFunction((array, func) => {
-  let isBreaked = false
-  for (let i in array){
-    ifFalse(!func(array[i]), () => {
-      isBreaked = true
+  const iterate = createFunction((index) => {
+    ifFalse(!(index < array.length), () => {
+      ifFalse(executeFunction(func,array[index]), () => {
+        executeFunction(iterate,index + 1)
+      })
     })
-    if (isBreaked) return
-  }
+  })
+  executeFunction(iterate, 0)
 })
 
-const addthirtyNine = createFunction((number, func) => {
-  func(assigneValue(number + 39))
+const addThirtyNine = createFunction((number, func) => {
+  executeFunction(func, assigneValue(number + 39))
 })
 
 const executeFunction = createFunction((func, params) => {
@@ -25,10 +26,10 @@ const executeFunction = createFunction((func, params) => {
 })
 
 const executeFunctionAsync = createFunction(async (func, params) => {
-  func(params)
+  return executeFunction(func(params))
 })
 
-const tryCatch = createFunction((tryFunc, catchFunc, parameters) => {
+const tryCatch = safeExecute((tryFunc, catchFunc, parameters) => {
   try {
     executeFunction(tryFunc, parameters)
   } catch (e) {
@@ -36,15 +37,21 @@ const tryCatch = createFunction((tryFunc, catchFunc, parameters) => {
   }
 })
 
-export { 
-  ifFalse, 
-  forEachBreak, 
-  forEachContinue, 
-  addthirtyNine, 
-  executeFunction, 
-  executeFunctionAsync, 
-  tryCatch, 
-  assigneValue, 
-  createFunction
-}
+// const cchien = [1,2,3,4,5,6,7,8,9]
+// forEachBreak(cchien, (item) => {
+//   console.log(item)
+//   return false
+// })
+
+// export { 
+//   ifFalse, 
+//   forEachBreak, 
+//   forEachContinue, 
+//   addthirtyNine, 
+//   executeFunction, 
+//   executeFunctionAsync, 
+//   tryCatch, 
+//   assigneValue, 
+//   createFunction
+// }
 
