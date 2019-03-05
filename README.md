@@ -52,12 +52,14 @@ modez.addThirtyNine(nbr, (result) => {
 
 ## ifFalse
 
-Check if the condition is false so execute the callback
+Simpler and more functional way to check is a condition is false with else statement
 
 ```javascript
 const condition = false 
 modez.ifFalse(condition, () => {
     console.log("condition is false")
+}).else(() => {
+    console.log("condition is true")
 })
 ```
 

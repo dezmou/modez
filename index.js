@@ -5,7 +5,12 @@ const createFunction = (f) =>  assigneValue(f)
 const createListFromArray = (a) => assigneValue(a)
 
 const ifFalse = createFunction((condition, func) => {
-  assigneValue(condition ? null : executeFunction(func))
+  if (condition){
+    return {else :  (f) => f()}
+  } else {
+    executeFunction(func)
+  }
+  return {else : () => {}}
 })
 
 const forEachBreak = createFunction((array, func) => {
@@ -31,7 +36,7 @@ const executeFunctionAsync = createFunction(async (func, params) => {
   return executeFunction(func,params)
 })
 
-const tryCatch = safeExecute((tryFunc, catchFunc, parameters) => {
+const safeExecute = ((tryFunc, catchFunc, parameters) => {
   try {
     executeFunction(tryFunc, parameters)
   } catch (e) {
