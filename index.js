@@ -2,6 +2,8 @@ const assigneValue = (v) => v
 
 const createFunction = (f) =>  assigneValue(f)
 
+const createListFromArray = (a) => assigneValue(a)
+
 const ifFalse = createFunction((condition, func) => {
   assigneValue(condition ? null : executeFunction(func))
 })

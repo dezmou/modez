@@ -72,6 +72,16 @@ const myFunction = (foo) => {
 modez.executeFunction(myFunction, "chien")
 ```
 
+## createListFromArray
+
+Given an array, return a list of the elements of it
+
+```javascript
+const myArray = [1, 2, 3]
+const myList = modez.createListFromArray(myArray)
+```
+
+
 ## executeFunctionAsync
 
 Simpler solution to execute a given function asynchronously
