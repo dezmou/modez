@@ -79,7 +79,7 @@ Simpler solution to execute a given function asynchronously
 const myFunction = (foo) => {
     console.log(`Welcome ${foo} !`) //welcome chien !
 }
-modez.executeFunction(myFunction, "foo")
+modez.executeFunction(myFunction, "chien")
 console.log("I am first") // first log to be printed
 ```
 
