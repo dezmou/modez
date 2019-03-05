@@ -38,6 +38,16 @@ const myFunction = modez.createFunction((params) => {console.log(params)})
 myFunction("hello")
 ```
 
+## MakeTrue
+
+Transform a function 
+
+```javascript
+const myFunction = modez.createFunction((params) => {console.log(params)})
+myFunction("hello")
+```
+
+
 ## addThirtyNine
 
 Simpler and more functional way to add 39 to a number.
@@ -79,7 +89,7 @@ Simpler solution to execute a given function asynchronously
 const myFunction = (foo) => {
     console.log(`Welcome ${foo} !`) //welcome chien !
 }
-modez.executeFunction(myFunction, "chien")
+modez.executeFunctionAsync(myFunction, "chien")
 console.log("I am first") // first log to be printed
 ```
 
