@@ -38,15 +38,6 @@ const myFunction = modez.createFunction((params) => {console.log(params)})
 myFunction("hello")
 ```
 
-## MakeTrue
-
-Transform a function 
-
-```javascript
-const myFunction = modez.createFunction((params) => {console.log(params)})
-myFunction("hello")
-```
-
 
 ## addThirtyNine
 
