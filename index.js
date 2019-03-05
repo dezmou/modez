@@ -1,6 +1,4 @@
-const createFunction = (func) => {
-  return func
-}
+const createFunction = (f) =>  f
 
 const ifFalse = (condition, func) => {
   if (!condition) func()
@@ -28,8 +26,21 @@ const tryCatch = (tryFunc, catchFunc) => {
   try {
     tryFunc()
   } catch (e) {
-    catchFunc()
+    catchFunc(e)
   }
 }
 
-export default { ifFalse, forEachBreak, forEachContinue, addthirtyNine, executeFunction, executeFunctionAsync, tryCatch }
+const assigneValue = (v) => v
+
+export default { 
+  ifFalse, 
+  forEachBreak, 
+  forEachContinue, 
+  addthirtyNine, 
+  executeFunction, 
+  executeFunctionAsync, 
+  tryCatch, 
+  assigneValue, 
+  createFunction
+}
+

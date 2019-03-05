@@ -6,7 +6,6 @@
 const modez = require("modez")
 ```
 
-
 ## forEachBreak
 
 forEach function but if callback return true then break
@@ -16,6 +15,17 @@ modez.forEachBreak(array, item => {
     if (item === "chien"){
         return true //end of forEach
     }
+})
+```
+
+## forOne
+
+Iterate through a given array like forEach, but only first element.
+
+```javascript
+myArray = [1,2,3]
+modez.forOne(myArray, (item) => {
+    console.log(item) // only 1 will be printed
 })
 ```
 
@@ -30,7 +40,7 @@ myFunction("hello")
 
 ## addthirtyNine
 
-Simpler way to add 39 to a number.
+Simpler and more functional way to add 39 to a number.
 
 ```javascript
 let nbr = 20
@@ -47,16 +57,6 @@ Check if the condition is false so execute the callback
 const condition = false 
 modez.ifFalse(condition, () => {
     console.log("condition is false")
-})
-```
-## forOne
-
-Iterate through a given array like forEach, but only first element.
-
-```javascript
-myArray = [1,2,3]
-modez.forOne(myArray, (item) => {
-    console.log(item) // only 1 will be printed
 })
 ```
 
@@ -81,6 +81,15 @@ const myFunction = (foo) => {
 }
 modez.executeFunction(myFunction, "chien")
 console.log("I am first") // first log to be printed
+```
+
+## assigneValue
+
+Simpler and more functional way to assign a value to a variable
+
+```javascript
+let myNbr = modez.assignValue(42)
+console.log(myNbr) // 42
 ```
 
 ## safeExecute
