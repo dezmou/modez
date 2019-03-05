@@ -26,7 +26,7 @@ const executeFunction = createFunction((func, params) => {
 })
 
 const executeFunctionAsync = createFunction(async (func, params) => {
-  return executeFunction(func(params))
+  return executeFunction(func,params)
 })
 
 const tryCatch = safeExecute((tryFunc, catchFunc, parameters) => {
