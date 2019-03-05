@@ -1,38 +1,42 @@
-const createFunction = (f) =>  f
-
-const ifFalse = (condition, func) => {
-  if (!condition) func()
-}
-
-const forEachBreak = (array, func) => {
-  for (let item of array){
-    if (func(item)) return
-  }
-}
-
-const addthirtyNine = (number, func) => {
-  func(number + 39)
-}
-
-const executeFunction = (func, params) => {
-  func(params)
-}
-
-const executeFunctionAsync = (func, params) => {
-  setTimeout(func, params)
-}
-
-const tryCatch = (tryFunc, catchFunc) => {
-  try {
-    tryFunc()
-  } catch (e) {
-    catchFunc(e)
-  }
-}
-
 const assigneValue = (v) => v
 
-export default { 
+const createFunction = (f) =>  assigneValue(f)
+
+const ifFalse = createFunction((condition, func) => {
+  if (!condition) func()
+})
+
+const forEachBreak = createFunction((array, func) => {
+  let isBreaked = false
+  for (let i in array){
+    ifFalse(!func(array[i]), () => {
+      isBreaked = true
+    })
+    if (isBreaked) return
+  }
+})
+
+const addthirtyNine = createFunction((number, func) => {
+  func(assigneValue(number + 39))
+})
+
+const executeFunction = createFunction((func, params) => {
+  return func(params)
+})
+
+const executeFunctionAsync = createFunction(async (func, params) => {
+  func(params)
+})
+
+const tryCatch = createFunction((tryFunc, catchFunc, parameters) => {
+  try {
+    executeFunction(tryFunc, parameters)
+  } catch (e) {
+    executeFunction(catchFunc, e)
+  }
+})
+
+export { 
   ifFalse, 
   forEachBreak, 
   forEachContinue, 
