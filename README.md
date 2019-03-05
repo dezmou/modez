@@ -52,7 +52,7 @@ modez.addThirtyNine(nbr, (result) => {
 
 ## ifFalse
 
-Simpler and more functional way to check is a condition is false with else statement
+Simpler and more functional way to check if a condition is false with else statement
 
 ```javascript
 const condition = false 
