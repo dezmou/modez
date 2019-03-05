@@ -44,21 +44,17 @@ const safeExecute = ((tryFunc, catchFunc, parameters) => {
   }
 })
 
-// const cchien = [1,2,3,4,5,6,7,8,9]
-// forEachBreak(cchien, (item) => {
-//   console.log(item)
-//   return false
-// })
 
-// export { 
-//   ifFalse, 
-//   forEachBreak, 
-//   forEachContinue, 
-//   addthirtyNine, 
-//   executeFunction, 
-//   executeFunctionAsync, 
-//   tryCatch, 
-//   assigneValue, 
-//   createFunction
-// }
+export { 
+  ifFalse, 
+  forEachBreak, 
+  forEachContinue, 
+  addThirtyNine, 
+  executeFunction, 
+  executeFunctionAsync, 
+  safeExecute, 
+  assigneValue, 
+  createFunction,
+  createListFromArray,
+}
 
