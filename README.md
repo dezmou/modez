@@ -6,18 +6,6 @@
 const modez = require("modez")
 ```
 
-## forEachBreak
-
-forEach function but if callback return true then break
-
-```javascript
-modez.forEachBreak(array, item => {
-    if (item === "chien"){
-        return true //end of forEach
-    }
-})
-```
-
 ## forOne
 
 Iterate through a given array like forEach, but only first element.
